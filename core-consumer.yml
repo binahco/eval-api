@@ -1,0 +1,22 @@
+# Manifest del consumidor. Contrato e inventario a la vez (ARCHITECTURE.md §2.1).
+week: 6
+name: eval-api
+core_version: 0.6.0
+
+reused_modules:
+  - llm-client
+  - schema-validate
+  - test-kit
+  - web-api-base
+
+new_surface:
+  - "API HTTP para evals: POST /evals/run (test-kit por HTTP) y POST /summarize"
+  - prompt eval-summarizer (modo json para resumen estructurado, modo texto para veredicto)
+  - "evals/eval-summarizer: 3 casos, criterios deterministas+json+schema"
+  - "dogfood: el propio resumen del runner nace evaluado desde el día 0"
+  - "recicla la base: /health, /llm y errores/SSE vienen de web-api-base"
+
+estimated_new_surface: 35
+
+# Presupuesto máximo de evals en USD por semana (ARCHITECTURE.md §8.1).
+eval_budget_usd: 2.0
