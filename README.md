@@ -58,6 +58,6 @@ web-api-base base (health+errores+SSE)            ReplayProvider (CI) · OpenCod
 
 ## Roadmap
 
-- Sem 8: rate-limit y caché sobre `/evals/run` (`cache-ratelimit`).
+- Sem 8: `cache-ratelimit` aterrizó en `llm-gateway`; reusarlo sobre `/evals/run` cuando el consumo lo pida.
 - Sem 39: métricas de costo/latencia por endpoint (`cost-obs`).
 - Ampliar dataset congelado a 5+ casos de regresión real.
